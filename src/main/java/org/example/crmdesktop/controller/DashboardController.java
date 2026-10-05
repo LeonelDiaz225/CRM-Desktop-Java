@@ -53,6 +53,16 @@ public class DashboardController implements Initializable {
         navigationService.show("/fxml/clients.fxml", "CRM Desktop - Clientes");
     }
 
+    @FXML
+    private void openEquipment() {
+        navigationService.show("/fxml/equipment.fxml", "CRM Desktop - Equipos");
+    }
+
+    @FXML
+    private void openRepairs() {
+        navigationService.show("/fxml/repairs.fxml", "CRM Desktop - Reparaciones");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         configureColumns();

@@ -125,6 +125,11 @@ public class ClientController implements Initializable {
         navigationService.showDashboard();
     }
 
+    @FXML
+    private void openEquipment() {
+        navigationService.show("/fxml/equipment.fxml", "CRM Desktop - Equipos");
+    }
+
     private void selectClient(Client client) {
         selectedClient = client;
         if (client == null) {

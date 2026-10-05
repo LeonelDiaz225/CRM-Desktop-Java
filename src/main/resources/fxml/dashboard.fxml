@@ -39,6 +39,10 @@
             </HBox>
             <Button text="Gestionar clientes" onAction="#openClients"
                     style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <HBox spacing="10">
+                <Button text="Gestionar equipos" onAction="#openEquipment"/>
+                <Button text="Gestionar reparaciones" onAction="#openRepairs"/>
+            </HBox>
             <Label text="Últimas reparaciones" style="-fx-text-fill: #263238; -fx-font-size: 20px; -fx-font-weight: bold;"/>
             <TableView fx:id="tableRecentRepairs" VBox.vgrow="ALWAYS">
                 <columns>

@@ -21,6 +21,7 @@
                 <Insets top="16" right="24" bottom="16" left="24"/>
             </padding>
             <Button text="← Dashboard" onAction="#backToDashboard"/>
+            <Button text="Equipos" onAction="#openEquipment"/>
             <Label text="Clientes" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
         </HBox>
     </top>

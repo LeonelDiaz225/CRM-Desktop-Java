@@ -1,0 +1,10 @@
+# Copiar este archivo como application.properties y completar la contraseña local.
+spring.datasource.url=jdbc:mysql://127.0.0.1:3307/gestion_pc?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=CAMBIAR_ESTA_CONTRASEÑA
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.open-in-view=false

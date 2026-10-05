@@ -8,6 +8,10 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import java.util.List;
 
 public interface RepairRepository extends JpaRepository<Repair, Long> {
+    @Override
+    @EntityGraph(attributePaths = {"client", "equipment"})
+    List<Repair> findAll();
+
     long countByStatusNot(RepairStatus status);
 
     List<Repair> findByClientIdOrderByReceivedDateDesc(Long clientId);

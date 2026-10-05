@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.crmdesktop.controller.RepairController"
+            style="-fx-background-color: #f4f6f8;">
+    <top><HBox spacing="12" alignment="CENTER_LEFT" style="-fx-background-color: #263238;">
+        <padding><Insets top="16" right="24" bottom="16" left="24"/></padding>
+        <Button text="← Dashboard" onAction="#backToDashboard"/>
+        <Button text="Equipos" onAction="#openEquipment"/>
+        <Label text="Reparaciones" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+    </HBox></top>
+    <center><VBox spacing="12">
+        <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+        <TableView fx:id="tableRepairs" VBox.vgrow="ALWAYS"><columns>
+            <TableColumn fx:id="colClient" text="Cliente" prefWidth="190"/>
+            <TableColumn fx:id="colEquipment" text="Equipo" prefWidth="240"/>
+            <TableColumn fx:id="colStatus" text="Estado" prefWidth="160"/>
+            <TableColumn fx:id="colDate" text="Recibido" prefWidth="130"/>
+        </columns></TableView>
+        <Label text="Orden de reparación" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <GridPane hgap="10" vgap="8">
+            <ComboBox fx:id="cmbClient" promptText="Cliente" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbEquipment" promptText="Equipo" GridPane.columnIndex="1"/>
+            <ComboBox fx:id="cmbStatus" promptText="Estado" GridPane.columnIndex="2"/>
+            <DatePicker fx:id="dateReceived" promptText="Fecha recibida" GridPane.columnIndex="3"/>
+            <DatePicker fx:id="dateCompleted" promptText="Fecha terminada" GridPane.columnIndex="4"/>
+            <TextField fx:id="txtCost" promptText="Costo" GridPane.columnIndex="5"/>
+        </GridPane>
+        <HBox spacing="10">
+            <TextArea fx:id="txtProblem" promptText="Descripción del problema" prefRowCount="3" HBox.hgrow="ALWAYS"/>
+            <TextArea fx:id="txtDiagnosis" promptText="Diagnóstico técnico" prefRowCount="3" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox spacing="10"><Button text="Nuevo / Limpiar" onAction="#clearForm"/>
+            <Button text="Guardar reparación" onAction="#saveRepair"/>
+            <Button text="Eliminar reparación" onAction="#deleteRepair"/></HBox>
+    </VBox></center>
+</BorderPane>
