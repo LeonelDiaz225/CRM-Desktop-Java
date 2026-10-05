@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.crmdesktop.controller.DashboardController"
+            style="-fx-background-color: #f4f6f8;">
+    <top>
+        <VBox spacing="6" style="-fx-background-color: #263238;">
+            <padding>
+                <Insets top="20" right="24" bottom="20" left="24"/>
+            </padding>
+            <Label text="CRM Desktop" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Label text="Panel de control de reparaciones" style="-fx-text-fill: #cfd8dc; -fx-font-size: 14px;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+            <HBox spacing="20">
+                <VBox spacing="8" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 18; -fx-pref-width: 220;">
+                    <Label text="Reparaciones activas" style="-fx-text-fill: #607d8b; -fx-font-size: 14px;"/>
+                    <Label fx:id="lblTotalRepairs" text="0" style="-fx-text-fill: #263238; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+                </VBox>
+                <VBox spacing="8" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 18; -fx-pref-width: 220;">
+                    <Label text="Clientes registrados" style="-fx-text-fill: #607d8b; -fx-font-size: 14px;"/>
+                    <Label fx:id="lblTotalClients" text="0" style="-fx-text-fill: #263238; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+                </VBox>
+            </HBox>
+            <Button text="Gestionar clientes" onAction="#openClients"
+                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="Últimas reparaciones" style="-fx-text-fill: #263238; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <TableView fx:id="tableRecentRepairs" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colClient" text="Cliente" prefWidth="220"/>
+                    <TableColumn fx:id="colEquipment" text="Equipo" prefWidth="180"/>
+                    <TableColumn fx:id="colStatus" text="Estado" prefWidth="160"/>
+                    <TableColumn fx:id="colReceivedDate" text="Recibido" prefWidth="140"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

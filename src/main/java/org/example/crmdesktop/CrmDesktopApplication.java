@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.example.crmdesktop.service.NavigationService;
 
 import java.io.IOException;
 
@@ -29,12 +30,9 @@ public class CrmDesktopApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/dashboard.fxml"));
-        loader.setControllerFactory(springContext::getBean);
-        Parent root = loader.load();
-
-        primaryStage.setTitle("CRM Desktop - Dashboard");
-        primaryStage.setScene(new Scene(root, 900, 600));
+        NavigationService navigationService = springContext.getBean(NavigationService.class);
+        navigationService.setPrimaryStage(primaryStage);
+        navigationService.showDashboard();
         primaryStage.show();
     }
 
