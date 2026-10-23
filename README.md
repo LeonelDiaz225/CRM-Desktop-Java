@@ -17,6 +17,8 @@ La pantalla inicial funciona como panel de control del taller e incluye:
 - Mensajes de error cuando la base de datos no está disponible o la configuración es incorrecta.
 
 Las reparaciones entregadas no se consideran activas. El dashboard muestra hasta diez reparaciones ordenadas por fecha de recepción, de la más reciente a la más antigua.
+<img width="1002" height="680" alt="image" src="https://github.com/user-attachments/assets/7888a9a7-6b05-4c3b-a979-55588990fd99" />
+
 
 ### Gestión de clientes
 
@@ -30,6 +32,8 @@ El módulo de clientes permite:
 - Guardar nombre, teléfono, correo electrónico y dirección.
 
 El nombre del cliente es obligatorio. Los equipos y reparaciones se relacionan con el cliente correspondiente.
+<img width="999" height="677" alt="image" src="https://github.com/user-attachments/assets/dcc31aa6-334e-4254-8e5a-e83341233123" />
+
 
 ### Gestión de equipos
 
@@ -43,6 +47,8 @@ El módulo de equipos permite administrar los dispositivos pertenecientes a los 
 - Consultar el cliente propietario desde la tabla.
 
 El tipo de equipo y el cliente son obligatorios. El número de serie, cuando se informa, debe ser único en la base de datos.
+<img width="998" height="681" alt="image" src="https://github.com/user-attachments/assets/124861eb-f88d-47e9-a0b5-e0db998585da" />
+
 
 ### Gestión de reparaciones
 
@@ -67,6 +73,8 @@ Los estados disponibles son:
 6. `ENTREGADO`
 
 Si no se indica un estado, se utiliza `RECIBIDO`. Si no se indica una fecha de recepción, se asigna la fecha actual. El costo no puede ser negativo.
+<img width="997" height="676" alt="image" src="https://github.com/user-attachments/assets/a840a2f1-4ce5-48fd-8aff-1ee713c90af9" />
+
 
 ## Tecnologías utilizadas
 
